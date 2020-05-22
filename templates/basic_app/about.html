@@ -1,0 +1,52 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+{% block styles %}
+.jumbotron{
+  padding:20px;
+  text-align:center;
+}
+.pic{
+  background-color: #E8E5E3;
+  padding:5px;
+}
+.pic:hover{
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.insideBox{
+  margin: 5px;
+}
+{% endblock %}
+{% block body_block %}
+  <div class="jumbotron" >
+        <h1 class="display-4">About Us</h1>
+        <p class="lead">Get breaking news headlines, and search
+          for articles from over 30,000 news sources and blogs with our Website</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 col-xs-12  ">
+        <div class="insideBox text-center pic border rounded">
+          <img src="{% static "images/saket.JPG" %}" alt="Saket" class="img-rounded" width="100%">
+          <h3>Saket Ozarkar</h3>
+          <h4>D7A 51</h4>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-xs-12 ">
+        <div class="insideBox text-center pic border rounded">
+          <img src="{% static "images/nitin.JPG" %}" alt="Saket" class="img-rounded" width="100%">
+          <h3>Nitin Tejuja</h3>
+          <h4>D7A 70</h4>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-xs-12 ">
+        <div class="insideBox pic text-center border rounded">
+          <img src="{% static "images/sesha.jpg" %}" alt="Saket" class="img-rounded" width="100%" >
+          <h3>Seshadri</h3>
+          <h4>D7A 67</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
