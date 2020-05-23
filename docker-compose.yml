@@ -1,8 +1,19 @@
 version : '3'
 
 services:
+    db:
+        image: mysql
+        ports:
+            - "3306:3306"
+        environment: 
+            MYSQL_DATABASE: 'dbName'
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: 'password'
+            MYSQL_ROOT_PASSWORD: 'rootPassword'
+        
     web:
-        build: .
+        image: gun
         ports: 
             - "8000:8000"
-
+        depends_on:
+            - db

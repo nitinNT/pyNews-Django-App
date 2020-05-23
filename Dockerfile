@@ -14,7 +14,8 @@ COPY . /app
 
 EXPOSE 8000
 STOPSIGNAL SIGINT
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+
+# - w workers to serve the more requests
+CMD ["gunicorn", "-b",":8000","-w","3","newsapi.wsgi"]
 
 
