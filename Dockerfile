@@ -15,7 +15,3 @@ COPY . /app
 EXPOSE 8000
 STOPSIGNAL SIGINT
 
-# - w workers to serve the more requests
-CMD ["gunicorn", "-b",":8000","-w","3","newsapi.wsgi"]
-
-
