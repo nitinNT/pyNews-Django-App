@@ -13,7 +13,7 @@ services:
         volumes:
             - postgres_data:/var/lib/postgresql/data/
     web:
-        image: final
+        build : .
         ports: 
             - "8000:8000"
         command: gunicorn -b :8000 -w 3 newsapi.wsgi
