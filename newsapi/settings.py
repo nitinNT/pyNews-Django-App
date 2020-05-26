@@ -11,10 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from environs import Env
 
-env=Env()
-env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
@@ -81,12 +78,12 @@ WSGI_APPLICATION = 'newsapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': env.str('DATABASE_ENGINE'),
-        'NAME': env.str('DATABASE_NAME'),
-        'USER':env.str('DATABASE_USER'),
-        'PASSWORD':env.str('DATABASE_PASSWORD'),
-        'HOST':env.str('DATABASE_HOST'),
-        'PORT':env.str('DATABASE_PORT')
+        'ENGINE': os.getenv('DATABASE_ENGINE'),
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER':os.getenv('DATABASE_USER'),
+        'PASSWORD':os.getenv('DATABASE_PASSWORD'),
+        'HOST':os.getenv('DATABASE_HOST'),
+        'PORT':os.getenv('DATABASE_PORT')
     }
 }
 

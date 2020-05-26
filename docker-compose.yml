@@ -16,6 +16,13 @@ services:
         build : .
         ports: 
             - "8000:8000"
+        environment: 
+            - "DATABASE_ENGINE=django.db.backends.postgresql"
+            - "DATABASE_NAME=DBName"
+            - "DATABASE_USER=postgres"
+            - "DATABASE_PASSWORD=postgres"
+            - "DATABASE_HOST=192.168.99.100"
+            - "DATABASE_PORT=5432"
         command: gunicorn -b :8000 -w 3 newsapi.wsgi
         depends_on:
             - db
